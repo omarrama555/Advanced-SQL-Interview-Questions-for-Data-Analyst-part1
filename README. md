@@ -16,3 +16,4 @@ WITH RankedRecords AS (
     FROM table_name
 )
 DELETE FROM RankedRecords WHERE rn > 1;
+
