@@ -197,5 +197,3 @@ ORDER BY level, employee_id;
 
 ---
 
-**👨‍💼 Author:** Data Analyst SQL Guide  
-**📅 Last Updated:** May 2025
