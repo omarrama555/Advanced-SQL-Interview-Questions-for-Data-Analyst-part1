@@ -1,0 +1,18 @@
+# Advanced SQL Interview Questions for Data Analyst
+
+Below are 10 advanced SQL interview questions with sample answers tailored for a **Data Analyst** role. These questions cover complex querying, performance optimization, and key database concepts.
+
+---
+
+### 1. How would you write a SQL query to find duplicate records in a table and remove them while keeping the most recent record based on a timestamp?
+
+**Answer:**  
+Use `ROW_NUMBER()` with a CTE to identify duplicates and delete all but the latest.
+
+```sql
+WITH RankedRecords AS (
+    SELECT *,
+           ROW_NUMBER() OVER (PARTITION BY unique_column ORDER BY timestamp_column DESC) AS rn
+    FROM table_name
+)
+DELETE FROM RankedRecords WHERE rn > 1;
